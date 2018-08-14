@@ -1,0 +1,71 @@
+.concluido {
+    color: #888;
+    position: relative;
+}
+
+.concluido::after {
+    content: ' ';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #333;
+    animation: dash-through .3s ease-in 1 forwards;
+}
+
+@keyframes dash-through {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+
+/* CSS DO BLOCO DE TAREFAS */
+
+.tarefa {
+    display: grid;
+    grid-template: 1fr / 80% 20%;
+    margin-top: 8px;
+    max-width: 100%;
+}
+
+.tarefa>div {
+    display: flex;
+    align-items: center;
+}
+
+.tarefa .tarefa--alterar {
+    margin: 0px 10px;
+}
+
+.tarefa .tarefa--alterar::before {
+    background-color: blue;
+}
+
+.tarefa .tarefa--descricao {
+    font-size: 1.2em;
+    max-width: calc(100% - 50px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    cursor: pointer;
+}
+
+.tarefa .tarefa--botao {
+    align-self: center;
+    background: red;
+    color: white;
+    border: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, .1), 0 3px 6px rgba(0, 0, 0, .08);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, .1), 0 3px 6px rgba(0, 0, 0, .08);
+    outline: 0;
+    -webkit-transition: all .15s ease;
+    transition: all .15s ease;
+    cursor: pointer;
+}
